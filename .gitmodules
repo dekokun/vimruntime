@@ -1,3 +1,12 @@
 [submodule "bundle/quickrun"]
 	path = bundle/quickrun
 	url = git://github.com/thinca/vim-quickrun.git
+[submodule "bundle/rails"]
+	path = bundle/rails
+	url = https://github.com/tpope/vim-rails.git
+[submodule "bundle/surround"]
+	path = bundle/surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "bundle/ruby"]
+	path = bundle/ruby
+	url = https://github.com/vim-ruby/vim-ruby.git
