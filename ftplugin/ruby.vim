@@ -16,6 +16,5 @@ function! RSpec()
   endif
 endfunction
 
-" au BufRead,BufNewFile *_spec.rb :command! RSpec :call RSpec()
 command! RSpec :call RSpec()
 nmap ,r :RSpec<CR>
