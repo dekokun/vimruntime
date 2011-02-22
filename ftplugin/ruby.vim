@@ -18,3 +18,8 @@ endfunction
 
 command! RSpec :call RSpec()
 nmap ,r :RSpec<CR>
+
+set nowrap
+set sw=2
+set sts=2
+set ts=8
