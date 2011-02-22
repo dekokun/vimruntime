@@ -10,3 +10,6 @@
 [submodule "bundle/surround"]
 	path = bundle/surround
 	url = git@github.com:tpope/vim-surround.git
+[submodule "bundle/vim-ref"]
+	path = bundle/vim-ref
+	url = git@github.com:thinca/vim-ref.git
