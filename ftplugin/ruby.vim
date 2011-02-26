@@ -6,13 +6,26 @@ else
   let g:quickrun_config['ruby.rspec'] = {'command': 'rspec','args': '-fs -c '}
 endif
 
-" rspecコマンド
+" rspecコマンド(行番号指定)
+function! RSpecLine()
+  let rails_spec_pat = '\<spec/\(models\|controllers\|views\|helpers\)/.*_spec\.rb$'
+  if expand('%:p') =~ rails_spec_pat
+    exe '!bundle exec rspec -f d '.expand('%:p').':'.line('.')
+  else
+    exe '!rspec -fs -c -l '.line('.').' '.expand('%:p')
+  endif
+endfunction
+
+command! RSpecLine :call RSpecLine()
+nmap ,rl :RSpecLine<CR>
+
+" rspecコマンド(ファイル全実行)
 function! RSpec()
   let rails_spec_pat = '\<spec/\(models\|controllers\|views\|helpers\)/.*_spec\.rb$'
   if expand('%:p') =~ rails_spec_pat
-    exe '!rake spec SPEC="'.expand('%:p').'" RSPECOPTS="-fs -c -l '.line('.').'"'
+    exe '!bundle exec rspec -f d '.expand('%:p')
   else
-    :!rspec -fs -c %
+    exec '!rspec -fs -c '.expand('%:p')
   endif
 endfunction
 
