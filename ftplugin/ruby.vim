@@ -32,6 +32,12 @@ endfunction
 command! RSpec :call RSpec()
 nmap ,r :RSpec<CR>
 
+function! SyntaxCheck()
+    let result = system('ruby -cw '.expand("%:p"))
+    echo result
+endfunction
+
+
 set nowrap
 set sw=2
 set sts=2
