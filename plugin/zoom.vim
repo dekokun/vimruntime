@@ -17,7 +17,7 @@ command! -narg=0 ZoomReset :call s:ZoomReset()
 
 " map
 nmap + :ZoomIn<CR>
-nmap - :ZoomOut<CR>
+nmap -- :ZoomOut<CR>
 
 " guifont size + 1
 function! s:ZoomIn()
@@ -73,7 +73,7 @@ version : 2009/12/19 16:00:00
 +
 
 " 文字サイズ縮小
--
+--
 
 ==============================================================================
 " vim: set et ft=vim nowrap :
