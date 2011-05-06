@@ -79,7 +79,7 @@ let snippets_dir = "$HOME/.vim/snippets/"
 let g:acp_behaviorSnipmateLength = 1
 
 " pathogen.vim において、自動的にbundleディレクトリ下も読み込む
-call pathogen#runtime_append_all_bundles()
+"call pathogen#runtime_append_all_bundles()
 
 "quickrun.vimの設定
 let g:quickrun_config = {}
