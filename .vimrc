@@ -79,7 +79,7 @@ let snippets_dir = "$HOME/.vim/snippets/"
 let g:acp_behaviorSnipmateLength = 1
 
 " pathogen.vim において、自動的にbundleディレクトリ下も読み込む
-call pathogen#runtime_append_all_bundles()
+"call pathogen#runtime_append_all_bundles()
 
 "quickrun.vimの設定
 let g:quickrun_config = {}
@@ -251,6 +251,15 @@ endif
 " crontabを編集するときはバックアップを行わない。行うとcrontabが編集できなくなる
 autocmd BufRead /tmp/crontab.* :set nobackup nowritebackup
 
+" Nerd Commenterの設定
+let g:NERDCreateDefaultMappings = 0
+let NERDSpaceDelims = 1
+nmap <Leader>/ <Plug>NERDCommenterToggle
+vmap <Leader>/ <Plug>NERDCommenterToggle
+nmap <Leader>/a <Plug>NERDCommenterAppend
+nmap <leader>/$ <Plug>NERDCommenterToEOL
+vmap <Leader>/s <Plug>NERDCommenterSexy
+vmap <Leader>/b <Plug>NERDCommenterMinimal
 
 " vundle.vim
 set rtp+=~/.vim/vundle.git/
@@ -267,3 +276,4 @@ Bundle 'git@github.com:motemen/git-vim.git'
 Bundle 'AutoComplPop'
 Bundle 'snipMate'
 Bundle 'zoom.vim'
+Bundle 'The-NERD-Commenter'
