@@ -251,6 +251,15 @@ endif
 " crontabを編集するときはバックアップを行わない。行うとcrontabが編集できなくなる
 autocmd BufRead /tmp/crontab.* :set nobackup nowritebackup
 
+" Nerd Commenterの設定
+let g:NERDCreateDefaultMappings = 0
+let NERDSpaceDelims = 1
+nmap <Leader>/ <Plug>NERDCommenterToggle
+vmap <Leader>/ <Plug>NERDCommenterToggle
+nmap <Leader>/a <Plug>NERDCommenterAppend
+nmap <leader>/$ <Plug>NERDCommenterToEOL
+vmap <Leader>/s <Plug>NERDCommenterSexy
+vmap <Leader>/b <Plug>NERDCommenterMinimal
 
 " vundle.vim
 set rtp+=~/.vim/vundle.git/
@@ -264,3 +273,4 @@ Bundle 'rails.vim'
 Bundle 'ruby.vim'
 Bundle 'surround.vim'
 Bundle 'git@github.com:motemen/git-vim.git'
+Bundle 'The-NERD-Commenter'
