@@ -243,11 +243,6 @@ augroup UjihisaRSpec
   autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
 augroup END
 
-"password file
-if filereadable(expand('$HOME/.vimrc_local'))
-    source $HOME/.vimrc_local
-endif
-
 " crontabを編集するときはバックアップを行わない。行うとcrontabが編集できなくなる
 autocmd BufRead /tmp/crontab.* :set nobackup nowritebackup
 
@@ -277,3 +272,9 @@ Bundle 'AutoComplPop'
 Bundle 'snipMate'
 Bundle 'zoom.vim'
 Bundle 'The-NERD-Commenter'
+
+"local setting
+if filereadable(expand('$HOME/.vimrc_local'))
+    source $HOME/.vimrc_local
+endif
+
