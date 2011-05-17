@@ -1,8 +1,8 @@
 " vi互換モードをオフに
 set nocompatible
 
-"filetypeの識別
-filetype on
+"filetypeの識別(vundleのplugin読み込み完了後にonにする)
+filetype off
 "インデント
 filetype indent on
 "プラグイン
@@ -274,3 +274,5 @@ Bundle 'ruby.vim'
 Bundle 'surround.vim'
 Bundle 'git@github.com:motemen/git-vim.git'
 Bundle 'The-NERD-Commenter'
+
+filetype plugin indent on
