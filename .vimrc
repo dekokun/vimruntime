@@ -256,6 +256,53 @@ nmap <leader>/$ <Plug>NERDCommenterToEOL
 vmap <Leader>/s <Plug>NERDCommenterSexy
 vmap <Leader>/b <Plug>NERDCommenterMinimal
 
+"neocomplcache
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_auto_completion_start_length = 1
+let g:neocomplcache_min_keyword_length = 3
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+let g:neocomplcache_enable_smart_case = 1
+" Use underbar completion.
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_plugin_completion_length = {
+  \ 'snipMate_complete' : 1,
+  \ 'keyword_complete'  : 2,
+  \ 'syntax_complete'   : 2
+  \ }
+
+"まだ辞書を用意していないファイルタイプ達
+"  \ 'erlang'     : $HOME . '/.vim/dict/erlang.dict',
+"  \ 'objc'       : $HOME . '/.vim/dict/objc.dict',
+"  \ 'javascript' : $HOME . '/.vim/dict/javascript.dict',
+"  \ 'mxml'       : $HOME . '/.vim/dict/mxml.dict',
+"  \ 'ruby'       : $HOME . '/.vim/dict/ruby.dict',
+"  \ 'scheme'     : $HOME . '/.vim/dict/gauche.dict'
+let g:neocomplcache_dictionary_filetype_lists = {
+  \ 'default'    : $HOME . '/.vim/dict/perl.dict',
+  \ 'perl'       : $HOME . '/.vim/dict/perl.dict',
+  \ }
+let g:neocomplcache_same_filetype_lists = {
+  \ 'perl'    : 'man',
+  \ 'erlang'  : 'man',
+  \ 'objc'    : 'c',
+  \ 'tt2html' : 'html,perl'
+  \}
+let g:neocomplcache_keyword_patterns = {
+  \ 'perl'   : '\v\<\h\w*\>?|\h\w*(::\h\w*)*|[$@%&*]\h\w*|\h\w*%(\s*\(\)?)?',
+  \ 'erlang' : '\v\h\w*(:\h\w*)*'
+  \}
+let g:neocomplcache_ctags_program = 'Ectags'
+"let g:neocomplcache_force_caching_buffer_name_pattern = '.\+'
+
+autocmd BufFilePost Manpageview* silent execute ":NeoComplCacheCachingBuffer"
+
+"スニペットを展開
+imap <silent><C-l>     <Plug>(neocomplcache_snippets_expand)
+smap <silent><C-l>     <Plug>(neocomplcache_snippets_expand)
+nnoremap <Space>s  :NeoComplCacheEditSnippets<CR>
+
+
 " vundle.vim
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
@@ -268,10 +315,10 @@ Bundle 'rails.vim'
 Bundle 'ruby.vim'
 Bundle 'surround.vim'
 Bundle 'git@github.com:motemen/git-vim.git'
-Bundle 'AutoComplPop'
 Bundle 'snipMate'
 Bundle 'zoom.vim'
 Bundle 'The-NERD-Commenter'
+Bundle 'neocomplcache'
 
 filetype plugin indent on
 "local setting
