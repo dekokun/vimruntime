@@ -302,7 +302,6 @@ imap <silent><C-l>     <Plug>(neocomplcache_snippets_expand)
 smap <silent><C-l>     <Plug>(neocomplcache_snippets_expand)
 nnoremap <Space>s  :NeoComplCacheEditSnippets<CR>
 
-
 " vundle.vim
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
@@ -319,6 +318,7 @@ Bundle 'snipMate'
 Bundle 'zoom.vim'
 Bundle 'The-NERD-Commenter'
 Bundle 'neocomplcache'
+Bundle 'ZenCoding.vim'
 
 filetype plugin indent on
 "local setting
