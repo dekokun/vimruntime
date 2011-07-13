@@ -12,7 +12,11 @@ function! SyntaxCheck()
 endfunction
 
 function! Test()
-  exec '!phpunit '.expand('%:p')
+    let phpunit_pat = 'Test.php$'
+    if expand('%:p') =~ phpunit_pat
+        exec '!phpunit --colors '.expand('%:p')
+    else
+        exec '!phpunit --colors '.expand('%:p:r').'Test.php'
 endfunction
 
 
