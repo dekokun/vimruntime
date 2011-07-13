@@ -223,6 +223,10 @@ nmap ,e :call ShebangExecute()<CR>
 command! Test :call Test()
 nmap ,t :Test<CR>
 
+" 文法確認実行
+command! SyntaxCheck :call SyntaxCheck()
+nmap ,l :SyntaxCheck<CR>
+
 "
 " inserst mode
 "set paste
