@@ -218,6 +218,11 @@ function! ShebangExecute()
     endif
 endfunction
 nmap ,e :call ShebangExecute()<CR>
+
+" テスト実行
+command! Test :call Test()
+nmap ,t :Test<CR>
+
 "
 " inserst mode
 "set paste

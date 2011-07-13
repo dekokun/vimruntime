@@ -14,7 +14,7 @@ command! RSpecLine :call RSpecLine()
 nmap ,rl :RSpecLine<CR>
 
 " rspecコマンド(ファイル全実行)
-function! RSpec()
+function! Test()
   let rails_spec_pat = '\<spec/\(models\|controllers\|views\|helpers\)/.*_spec\.rb$'
   if expand('%:p') =~ rails_spec_pat
     exe '!bundle exec rspec -f d '.expand('%:p')
@@ -23,8 +23,6 @@ function! RSpec()
   endif
 endfunction
 
-command! RSpec :call RSpec()
-nmap ,r :RSpec<CR>
 
 function! SyntaxCheck()
     let result = system('ruby -cw '.expand("%:p"))

@@ -11,6 +11,9 @@ function! SyntaxCheck()
     echo result
 endfunction
 
+function! Test()
+  exec '!phpunit '.expand('%:p')
+endfunction
 
 
 let g:ref_phpmanual_path = $HOME . '/.vim/bundle/vim-ref/ref/phpmanual'
