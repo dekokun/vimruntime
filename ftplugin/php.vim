@@ -17,6 +17,7 @@ function! Test()
         exec '!phpunit --colors '.expand('%:p')
     else
         exec '!phpunit --colors '.expand('%:p:r').'Test.php'
+    endif
 endfunction
 
 
