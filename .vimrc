@@ -302,6 +302,10 @@ imap <silent><C-l>     <Plug>(neocomplcache_snippets_expand)
 smap <silent><C-l>     <Plug>(neocomplcache_snippets_expand)
 nnoremap <Space>s  :NeoComplCacheEditSnippets<CR>
 
+" Zencoding
+" スペースインデント
+let g:user_zen_settings = { 'indentation':'  ' }
+
 " vundle.vim
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
