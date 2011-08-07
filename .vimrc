@@ -332,6 +332,7 @@ Bundle 'zoom.vim'
 Bundle 'The-NERD-Commenter'
 Bundle 'neocomplcache'
 Bundle 'ZenCoding.vim'
+Bundle 'https://github.com/csexton/jslint.vim.git'
 
 filetype plugin indent on
 "local setting
