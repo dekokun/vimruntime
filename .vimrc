@@ -43,6 +43,9 @@ set hlsearch
 " コマンド履歴を増やす
 set history=5000
 
+" 折り返す
+set wrap
+
 "vimrc,gvimrcを簡単に編集できるように
 nnoremap <silent> <Space>ev  :<C-u>edit $MYVIMRC<CR>
 nnoremap <silent> <Space>eg  :<C-u>edit $MYGVIMRC<CR>
