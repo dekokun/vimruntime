@@ -81,9 +81,6 @@ let snippets_dir = "$HOME/.vim/snippets/"
 " snipmate連携
 let g:acp_behaviorSnipmateLength = 1
 
-" pathogen.vim において、自動的にbundleディレクトリ下も読み込む
-"call pathogen#runtime_append_all_bundles()
-
 "quickrun.vimの設定
 let g:quickrun_config = {}
 "let g:quickrun_config['ruby.rspec'] = {'command': 'rake spec RSPECOPTS="-fs -c -l'}
@@ -321,21 +318,24 @@ let g:user_zen_settings = { 'indentation':'  ' }
 " vundle.vim
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
-
-
-Bundle 'ref.vim'
-Bundle 'quickrun.vim'
-Bundle 'quickrun'
-Bundle 'rails.vim'
-Bundle 'ruby.vim'
-Bundle 'surround.vim'
-Bundle 'git@github.com:motemen/git-vim.git'
-Bundle 'snipMate'
-Bundle 'zoom.vim'
-Bundle 'The-NERD-Commenter'
-Bundle 'neocomplcache'
-Bundle 'ZenCoding.vim'
-Bundle 'https://github.com/csexton/jslint.vim.git'
+if has('vim_starting')
+     set runtimepath+=~/.vim/bundle/neobundle.vim/
+     call neobundle#rc(expand('~/.vim/bundle/'))
+endif
+NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'ref.vim'
+NeoBundle 'quickrun.vim'
+NeoBundle 'quickrun'
+NeoBundle 'rails.vim'
+NeoBundle 'ruby.vim'
+NeoBundle 'surround.vim'
+NeoBundle 'git@github.com:motemen/git-vim.git'
+NeoBundle 'snipMate'
+NeoBundle 'zoom.vim'
+NeoBundle 'The-NERD-Commenter'
+NeoBundle 'neocomplcache'
+NeoBundle 'ZenCoding.vim'
+NeoBundle 'https://github.com/csexton/jslint.vim.git'
 
 filetype plugin indent on
 "local setting
