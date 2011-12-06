@@ -19,7 +19,7 @@ function! Test()
   if expand('%:p') =~ rails_spec_pat
     exe '!bundle exec rspec -f d '.expand('%:p')
   else
-    exec '!rspec -fs -c '.expand('%:p')
+    exec '!bundle exec rspec  -fs -c '.expand('%:p')
   endif
 endfunction
 
