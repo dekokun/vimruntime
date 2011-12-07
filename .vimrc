@@ -336,6 +336,10 @@ NeoBundle 'The-NERD-Commenter'
 NeoBundle 'neocomplcache'
 NeoBundle 'ZenCoding.vim'
 NeoBundle 'https://github.com/csexton/jslint.vim.git'
+NeoBundle 'Shougo/vimfiler'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/vimproc'
 
 filetype plugin indent on
 "local setting
