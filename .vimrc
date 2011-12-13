@@ -129,7 +129,7 @@ endif
 highlight Pmenu ctermbg=4
 highlight PmenuSel ctermbg=1
 highlight PMenuSbar ctermbg=4
-
+highlight Comment ctermfg=2
 
 " Yで、その場所から最後までをヤンク
 nnoremap Y y$
@@ -231,6 +231,8 @@ nmap ,l :SyntaxCheck<CR>
 " inserst mode
 "set paste
 "
+" Pathの検索を柔軟に
+setlocal includeexpr=substitute(v:fname,'^\\/','','') | setlocal path+=;/
 
 " Alignを日本語環境で使用するための設定
 :let g:Align_xstrlen = 3
