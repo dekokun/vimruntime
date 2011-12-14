@@ -317,6 +317,10 @@ nnoremap <Space>s  :NeoComplCacheEditSnippets<CR>
 " スペースインデント
 let g:user_zen_settings = { 'indentation':'  ' }
 
+" VimFiler
+let g:vimfiler_as_default_explorer=1
+let g:vimfiler_safe_mode_by_default=0
+
 " vundle.vim
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
