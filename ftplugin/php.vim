@@ -16,7 +16,7 @@ function! Test()
     if expand('%:p') =~ phpunit_pat
         exec '!phpunit --colors '.expand('%:p')
     else
-        exec '!phpunit --colors '.expand('%:p:r').'Test.php'
+        exec '!phpunit --colors '.expand('%:h').'/t/'.expand('%:t:r').'Test.php'
     endif
 endfunction
 
