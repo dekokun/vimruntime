@@ -208,6 +208,12 @@ autocmd BufReadPost *
 \   exe "normal g'\"" |
 \ endif
 
+" vimgrep時に検索結果の一覧を自動で開く
+augroup grepopen
+    autocmd!
+    autocmd QuickFixCmdPost vimgrep cw
+augroup END
+
 " shebangでファイルを実行する
 function! ShebangExecute()
     let m = matchlist(getline(1), '#!\(.*\)')
@@ -239,14 +245,6 @@ setlocal includeexpr=substitute(v:fname,'^\\/','','') | setlocal path+=;/
 
 ":Big the window Big!
 command! Big wincmd _ | wincmd |
-
-"autocomplpopのphp辞書の場所を指定
-augroup BufferAu
-    autocmd!
-    au BufNewFile,BufRead * let g:AutoComplPop_CompleteOption = '.,w,b,u,t'
-    au BufNewFile,BufRead *.php let g:AutoComplPop_CompleteOption = '.,w,b,u,t,k~/.vim/dict/php.dict'
-augroup END
-autocmd FileType php let g:AutoComplPop_CompleteOption = '.,w,b,u,t,i,k~/.vim/dict/php.dict'
 
 " rspecファイルのファイルタイプ変更
 augroup UjihisaRSpec
