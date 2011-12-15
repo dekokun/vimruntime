@@ -345,6 +345,7 @@ NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/vimproc'
+NeoBundle 'vim-jp/vimdoc-ja'
 
 filetype plugin indent on
 "local setting
