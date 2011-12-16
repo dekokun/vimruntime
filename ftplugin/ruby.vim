@@ -24,11 +24,12 @@ function! Test()
 endfunction
 
 
-function! SyntaxCheck()
-    let result = system('ruby -cw '.expand("%:p"))
-    echo result
-endfunction
+augroup rbsyntaxcheck
+  autocmd!
+  autocmd BufWrite *.rb w !ruby -c
+augroup END
 
+augroup rbsyntaxcheck
 
 set nowrap
 set sw=2
