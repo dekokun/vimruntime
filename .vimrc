@@ -319,6 +319,32 @@ let g:user_zen_settings = { 'indentation':'  ' }
 let g:vimfiler_as_default_explorer=1
 let g:vimfiler_safe_mode_by_default=0
 
+" unite.vim
+" 入力モードで開始する
+" let g:unite_enable_start_insert=1
+" バッファ一覧
+nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+" ファイル一覧
+nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+" レジスタ一覧
+nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
+" 最近使用したファイル一覧
+nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
+" 常用セット
+nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
+" 全部乗せ
+nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+
+augroup unite
+  autocmd!
+  " ウィンドウを分割して開く
+  autocmd FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
+  autocmd FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
+  " ウィンドウを縦に分割して開く
+  autocmd FileType unite nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
+  autocmd FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
+augroup END
+
 " vundle.vim
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
