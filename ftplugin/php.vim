@@ -8,7 +8,7 @@ autocmd FileType php let g:AutoComplPop_CompleteOption = '.,w,b,u,t,i,k~/.vim/di
 
 augroup phpsyntaxcheck
   autocmd!
-  autocmd BufWrite *.php w !php -l
+  autocmd BufWrite *.php w !echo $'\e[0;31m'; a=`php -l` echo $'\e[m'
 augroup END
 
 function! Test()
