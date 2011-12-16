@@ -428,6 +428,7 @@ NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'vim-jp/vimdoc-ja'
 NeoBundle 'vim-scripts/Align'
+NeoBundle 'vim-scripts/taglist.vim'
 
 filetype plugin indent on
 "local setting
