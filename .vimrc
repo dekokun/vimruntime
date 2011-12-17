@@ -48,6 +48,9 @@ set history=5000
 " 折り返す
 set wrap
 
+" インクリメンタル検索を行う
+set incsearch
+
 "vimrc,gvimrcを簡単に編集できるように
 nnoremap <silent> <Space>ev  :<C-u>edit $MYVIMRC<CR>
 nnoremap <silent> <Space>eg  :<C-u>edit $MYGVIMRC<CR>
