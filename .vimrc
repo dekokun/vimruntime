@@ -8,6 +8,8 @@ filetype indent on
 "プラグイン
 filetype plugin on
 
+syntax on
+
 " 行番号を表示する
 set number
 
@@ -52,12 +54,6 @@ nnoremap <silent> <Space>eg  :<C-u>edit $MYGVIMRC<CR>
 
 " - で現在のファイルのあるディレクトリを開く
 nnoremap - :<C-u>e %:h<Cr>
-
-"F5やS-F5を押すことにより、NOTEPADライクに日付が挿入できる
-map <F5> a<C-R>=strftime("%H:%M %Y/%m/%d")<CR>
-map <S-F5> i<C-R>=strftime("%H:%M %Y/%m/%d")<CR>
-
-syntax on
 
 nnoremap j gj
 nnoremap k gk
