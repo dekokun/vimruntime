@@ -404,6 +404,9 @@ augroup unite
   autocmd FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
 augroup END
 
+" Gundo.vim
+nnoremap <F5> :GundoToggle<CR>
+
 " vundle.vim
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
@@ -431,6 +434,7 @@ NeoBundle 'Shougo/vimproc'
 NeoBundle 'vim-jp/vimdoc-ja'
 NeoBundle 'vim-scripts/Align'
 NeoBundle 'vim-scripts/taglist.vim'
+NeoBundle 'sjl/gundo.vim'
 
 filetype plugin indent on
 "local setting
