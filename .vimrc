@@ -435,6 +435,7 @@ NeoBundle 'vim-scripts/Align'
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'thinca/vim-visualstar'
+NeoBundle 'vim-scripts/ShowMarks'
 
 filetype plugin indent on
 "local setting
