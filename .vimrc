@@ -420,6 +420,22 @@ nnoremap <Leader>gc :<C-u>GitCommit -v<Enter>
 nnoremap <Leader>gC :<C-u>GitCommit -v --amend<Enter>
 nnoremap <Leader>gp :<C-u>Git push
 
+" Chalice for vimの中のURLエンコード/デコード関数を使いやすくする
+function! s:URLEncode()
+    let l:line = getline('.')
+    let l:encoded = AL_urlencode(l:line)
+    call setline('.', l:encoded)
+endfunction
+function! s:URLDecode()
+    let l:line = getline('.')
+    let l:decoded = AL_urldecode(l:line)
+    call setline('.', l:decoded)
+endfunction
+
+command! -nargs=0 -range URLEncode :<line1>,<line2>call <SID>URLEncode()
+command! -nargs=0 -range URLGecode :<line1>,<line2>call <SID>URLDecode()
+
+
 " vundle.vim
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
@@ -452,6 +468,7 @@ NeoBundle 'thinca/vim-visualstar'
 NeoBundle 'vim-scripts/ShowMarks'
 NeoBundle 'vim-scripts/YankRing.vim'
 NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'koron/chalice'
 
 filetype plugin indent on
 "local setting
