@@ -181,10 +181,8 @@ set fileformats=unix,dos,mac
 if exists('&ambiwidth')
   set ambiwidth=double
 endif
-"autocomplpop.vimの色の設定
-highlight Pmenu ctermbg=4
-highlight PmenuSel ctermbg=1
-highlight PMenuSbar ctermbg=4
+
+" コメントの色を緑色に
 highlight Comment ctermfg=2
 
 " Yで、その場所から最後までをヤンク
