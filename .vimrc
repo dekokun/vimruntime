@@ -37,7 +37,7 @@ set showmatch
 set matchtime=3
 
 "y,pでクリップボードを操作できる
-set clipboard+=unnamed
+set clipboard+=unnamedplus,unnamed
 
 "検索結果をハイライト
 set hlsearch
@@ -406,6 +406,10 @@ augroup END
 " Gundo.vim
 nnoremap <F5> :GundoToggle<CR>
 
+" YankRing.vim
+let g:yankring_history_dir = expand('$HOME')
+let g:yankring_history_file = '.vim_yankring_history'
+
 " vundle.vim
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
@@ -436,6 +440,7 @@ NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'thinca/vim-visualstar'
 NeoBundle 'vim-scripts/ShowMarks'
+NeoBundle 'vim-scripts/YankRing.vim'
 
 filetype plugin indent on
 "local setting
