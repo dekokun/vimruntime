@@ -455,6 +455,7 @@ NeoBundle 'sjl/gundo.vim'
 NeoBundle 'thinca/vim-visualstar'
 NeoBundle 'vim-scripts/ShowMarks'
 NeoBundle 'vim-scripts/YankRing.vim'
+NeoBundle 'Lokaltog/vim-easymotion'
 
 filetype plugin indent on
 "local setting
