@@ -74,9 +74,7 @@ endif
 
 "%でdo-endやHTMLのタグの対応先にジャンプできるように
 source $VIMRUNTIME/macros/matchit.vim
-"本来下記1行は必要ないはず（自動的に読み込まれる）のだがなぜか会社のwindowsだと必要…理由不明…
-"source $HOME/.vim/plugin/snipMate.vim
-"source $HOME/.vim/after/plugin/snipMate.vim
+
 "snipmateを使用できるように
 let snippets_dir = "$HOME/.vim/snippets/"
 " snipmate連携
