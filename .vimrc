@@ -8,6 +8,8 @@ filetype indent on
 "プラグイン
 filetype plugin on
 
+syntax on
+
 " 行番号を表示する
 set number
 
@@ -35,7 +37,7 @@ set showmatch
 set matchtime=3
 
 "y,pでクリップボードを操作できる
-set clipboard+=unnamed
+set clipboard+=unnamedplus,unnamed
 
 "検索結果をハイライト
 set hlsearch
@@ -46,18 +48,15 @@ set history=5000
 " 折り返す
 set wrap
 
+" インクリメンタル検索を行う
+set incsearch
+
 "vimrc,gvimrcを簡単に編集できるように
 nnoremap <silent> <Space>ev  :<C-u>edit $MYVIMRC<CR>
 nnoremap <silent> <Space>eg  :<C-u>edit $MYGVIMRC<CR>
 
 " - で現在のファイルのあるディレクトリを開く
 nnoremap - :<C-u>e %:h<Cr>
-
-"F5やS-F5を押すことにより、NOTEPADライクに日付が挿入できる
-map <F5> a<C-R>=strftime("%H:%M %Y/%m/%d")<CR>
-map <S-F5> i<C-R>=strftime("%H:%M %Y/%m/%d")<CR>
-
-syntax on
 
 nnoremap j gj
 nnoremap k gk
@@ -75,9 +74,7 @@ endif
 
 "%でdo-endやHTMLのタグの対応先にジャンプできるように
 source $VIMRUNTIME/macros/matchit.vim
-"本来下記1行は必要ないはず（自動的に読み込まれる）のだがなぜか会社のwindowsだと必要…理由不明…
-"source $HOME/.vim/plugin/snipMate.vim
-"source $HOME/.vim/after/plugin/snipMate.vim
+
 "snipmateを使用できるように
 let snippets_dir = "$HOME/.vim/snippets/"
 " snipmate連携
@@ -118,7 +115,7 @@ augroup END
 
 if !has('gui_running') && !(has('win32') || has('win64'))
 " .vimrcの再読込時にも色が変化するようにする
-    autocmd MyAutoCmd BufWritePost $MYVIMRC nested source $MYVIMRC
+    autocmd MyAutoCmd BufWritePost .vimrc nested source $MYVIMRC
 else
 " .vimrcの再読込時にも色が変化するようにする
     autocmd MyAutoCmd BufWritePost $MYVIMRC source $MYVIMRC |
@@ -184,10 +181,8 @@ set fileformats=unix,dos,mac
 if exists('&ambiwidth')
   set ambiwidth=double
 endif
-"autocomplpop.vimの色の設定
-highlight Pmenu ctermbg=4
-highlight PmenuSel ctermbg=1
-highlight PMenuSbar ctermbg=4
+
+" コメントの色を緑色に
 highlight Comment ctermfg=2
 
 " Yで、その場所から最後までをヤンク
@@ -404,6 +399,43 @@ augroup unite
   autocmd FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
 augroup END
 
+" Gundo.vim
+nnoremap <F5> :GundoToggle<CR>
+
+" YankRing.vim
+let g:yankring_history_dir = expand('$HOME')
+let g:yankring_history_file = '.vim_yankring_history'
+
+" git-vim
+let g:git_no_map_default = 1
+let g:git_command_edit = 'rightbelow vnew'
+nnoremap <Leader>gd :<C-u>GitDiff<Enter>
+nnoremap <Leader>gD :<C-u>GitDiff --cached<Enter>
+nnoremap <Leader>gs :<C-u>GitStatus<Enter>
+nnoremap <Leader>gl :<C-u>GitLog<Enter>
+nnoremap <Leader>gL :<C-u>GitLog -u \| head -10000<Enter>
+nnoremap <Leader>ga :<C-u>GitAdd<Enter>
+nnoremap <Leader>gA :<C-u>GitAdd <cfile><Enter>
+nnoremap <Leader>gc :<C-u>GitCommit -v<Enter>
+nnoremap <Leader>gC :<C-u>GitCommit -v --amend<Enter>
+nnoremap <Leader>gp :<C-u>Git push
+
+" Chalice for vimの中のURLエンコード/デコード関数を使いやすくする
+function! s:URLEncode()
+    let l:line = getline('.')
+    let l:encoded = AL_urlencode(l:line)
+    call setline('.', l:encoded)
+endfunction
+function! s:URLDecode()
+    let l:line = getline('.')
+    let l:decoded = AL_urldecode(l:line)
+    call setline('.', l:decoded)
+endfunction
+
+command! -nargs=0 -range URLEncode :<line1>,<line2>call <SID>URLEncode()
+command! -nargs=0 -range URLGecode :<line1>,<line2>call <SID>URLDecode()
+
+
 " vundle.vim
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
@@ -431,6 +463,12 @@ NeoBundle 'Shougo/vimproc'
 NeoBundle 'vim-jp/vimdoc-ja'
 NeoBundle 'vim-scripts/Align'
 NeoBundle 'vim-scripts/taglist.vim'
+NeoBundle 'sjl/gundo.vim'
+NeoBundle 'thinca/vim-visualstar'
+NeoBundle 'vim-scripts/ShowMarks'
+NeoBundle 'vim-scripts/YankRing.vim'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'koron/chalice'
 
 filetype plugin indent on
 "local setting
