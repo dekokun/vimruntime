@@ -58,8 +58,8 @@ nnoremap <silent> <Space>eg  :<C-u>edit $MYGVIMRC<CR>
 " - で現在のファイルのあるディレクトリを開く
 nnoremap - :<C-u>e %:h<Cr>
 
-nnoremap j gj
-nnoremap k gk
+noremap j gj
+noremap k gk
 
 " タグジャンプの際にジャンプ先が複数ある場合は候補を表示する
 nnoremap <C-]> g<C-]>
