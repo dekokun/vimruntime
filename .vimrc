@@ -28,6 +28,9 @@ set backspace=indent,eol,start
  "タブの幅を４目盛りに
 set tabstop=4
 
+ "タブ文字で挿入される量をtabstopと同じにする
+set softtabstop=0
+
  " オートインデント時の幅を４目盛りに
 set shiftwidth=4
 
