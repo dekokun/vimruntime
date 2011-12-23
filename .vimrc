@@ -280,11 +280,11 @@ function! ShebangExecute()
         execute '!' &ft ' %'
     endif
 endfunction
-nmap ,e :call ShebangExecute()<CR>
+nmap ,e :w<CR>:call ShebangExecute()<CR>
 
 " テスト実行
 command! Test :call Test()
-nmap ,t :Test<CR>
+nmap ,t :w<CR>:Test<CR>
 
 " 文法確認実行
 command! SyntaxCheck :call SyntaxCheck()
