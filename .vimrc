@@ -54,9 +54,12 @@ set wrap
 " インクリメンタル検索を行う
 set incsearch
 
+" LeaderをSpaceに
+let mapleader = ' '
+
 "vimrc,gvimrcを簡単に編集できるように
-nnoremap <silent> <Space>ev  :<C-u>edit $MYVIMRC<CR>
-nnoremap <silent> <Space>eg  :<C-u>edit $MYGVIMRC<CR>
+nnoremap <silent> <Leader>ev  :<C-u>edit $MYVIMRC<CR>
+nnoremap <silent> <Leader>eg  :<C-u>edit $MYGVIMRC<CR>
 
 " - で現在のファイルのあるディレクトリを開く
 nnoremap - :<C-u>e %:h<Cr>
@@ -197,10 +200,10 @@ nnoremap yyy ggyG
 "バッファ操作を快適に
 nnoremap <C-n> :bn<CR>
 nnoremap <C-p> :bp<CR>
-nnoremap <Space>b :ls<CR>:buffer
-nnoremap <Space>f :edit .<CR>
-nnoremap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
-nnoremap <Space>V :Vexplore!<CR><CR>
+nnoremap <Leader>b :ls<CR>:buffer
+nnoremap <Leader>f :edit .<CR>
+nnoremap <Leader>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
+nnoremap <Leader>V :Vexplore!<CR><CR>
 
 
 "タブ操作を快適に
@@ -240,13 +243,13 @@ cnoremap <C-d> <Del>
 " nnoremap <CR> i<CR><esc>
 
 "スペース*と記入することにより、カーソル下の単語を置換
-nnoremap <expr> <Space>* ':%substitute/\<' . expand('<cword>') . '\>/'
+nnoremap <expr> <Leader>* ':%substitute/\<' . expand('<cword>') . '\>/'
 "スペース:と記入することにより、カーソル下の文字を置換
-nnoremap <expr> <Space>: ':%substitute/' . expand('<cword>') . '/'
+nnoremap <expr> <Leader>: ':%substitute/' . expand('<cword>') . '/'
 
 
 "スペース+と記入することにより、カーソル下の単語をvimgrep
-nnoremap <expr> <Space>; ':vimgrep ' . expand('<cword>') . ' **/* \| cwin'
+nnoremap <expr> <Leader>; ':vimgrep ' . expand('<cword>') . ' **/* \| cwin'
 
 "特殊文字(SpecialKey)の見える化。listcharsはlcsでも設定可能。
 ""trailは行末スペース。
@@ -366,7 +369,7 @@ autocmd BufFilePost Manpageview* silent execute ":NeoComplCacheCachingBuffer"
 "スニペットを展開
 imap <silent><C-l>     <Plug>(neocomplcache_snippets_expand)
 smap <silent><C-l>     <Plug>(neocomplcache_snippets_expand)
-nnoremap <Space>s  :NeoComplCacheEditSnippets<CR>
+nnoremap <Leader>s  :NeoComplCacheEditSnippets<CR>
 
 " Zencoding
 " スペースインデント
@@ -380,17 +383,17 @@ let g:vimfiler_safe_mode_by_default=0
 " 入力モードで開始する
 " let g:unite_enable_start_insert=1
 " バッファ一覧
-nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+nnoremap <silent> <Leader>ub :<C-u>Unite buffer<CR>
 " ファイル一覧
-nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> <Leader>uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 " レジスタ一覧
-nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> <Leader>ur :<C-u>Unite -buffer-name=register register<CR>
 " 最近使用したファイル一覧
-nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
+nnoremap <silent> <Leader>um :<C-u>Unite file_mru<CR>
 " 常用セット
-nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
+nnoremap <silent> <Leader>uu :<C-u>Unite buffer file_mru<CR>
 " 全部乗せ
-nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+nnoremap <silent> <Leader>ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 
 augroup unite
   autocmd!
