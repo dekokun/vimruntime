@@ -12,5 +12,6 @@ function! Test()
     endif
 endfunction
 
+compiler php
 
 let g:ref_phpmanual_path = $HOME . '/.vim/bundle/vim-ref/ref/phpmanual'
