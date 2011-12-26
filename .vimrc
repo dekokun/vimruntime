@@ -88,20 +88,7 @@ let g:acp_behaviorSnipmateLength = 1
 
 "quickrun.vimの設定
 let g:quickrun_config = {}
-"let g:quickrun_config['ruby.rspec'] = {'command': 'rake spec RSPECOPTS="-fs -c -l'}
 let g:quickrun_config['ruby.rspec'] = {'command': 'rake spec  RSPECOPTS="-fs -c" '}
-
-" rspecコマンド
-function! RSpec ()
-  let rails_spec_pat = '\<spec/\(models\|controllers\|views\|helpers\)/.*_spec\.rb$'
-  if expand('%:p') =~ rails_spec_pat
-    exe '!rake spec SPEC="'.expand('%:p').'" RSPECOPTS="-fs -c -l '.line('.').'"'
-  else
-    :!spec -fs -c %
-  endif
-endfunction
-
-au BufRead,BufNewFile *_spec.rb :command! RSpec :call RSpec()
 
 "自動的にインデント
 set autoindent
@@ -230,18 +217,6 @@ cnoremap <C-p> <Up>
 cnoremap <C-a> <home>
 cnoremap <C-d> <Del>
 
-" 検索時に結果が中央に来るようにする
-"nmap n nzz
-"nmap N Nzz
-"nmap * *zz
-"nmap # #zz
-"nmap g* g*zz
-"nmap g# g#zz
-
-" エンターにて、その場で改行(quickfixウインドウの中でジャンプできるよう
-" これは外す)
-" nnoremap <CR> i<CR><esc>
-
 "スペース*と記入することにより、カーソル下の単語を置換
 nnoremap <expr> <Leader>* ':%substitute/\<' . expand('<cword>') . '\>/'
 "スペース:と記入することにより、カーソル下の文字を置換
@@ -293,15 +268,11 @@ nmap ,t :w<CR>:Test<CR>
 command! SyntaxCheck :call SyntaxCheck()
 nmap ,l :SyntaxCheck<CR>
 
-"
-" inserst mode
-"set paste
-"
 " Pathの検索を柔軟に
 setlocal includeexpr=substitute(v:fname,'^\\/','','') | setlocal path+=;/
 
 " Alignを日本語環境で使用するための設定
-:let g:Align_xstrlen = 3
+let g:Align_xstrlen = 3
 
 ":Big the window Big!
 command! Big wincmd _ | wincmd |
@@ -314,16 +285,6 @@ augroup END
 
 " crontabを編集するときはバックアップを行わない。行うとcrontabが編集できなくなる
 autocmd BufRead /tmp/crontab.* :set nobackup nowritebackup
-
-" Nerd Commenterの設定
-let g:NERDCreateDefaultMappings = 0
-let NERDSpaceDelims = 1
-nmap <Leader>/ <Plug>NERDCommenterToggle
-vmap <Leader>/ <Plug>NERDCommenterToggle
-nmap <Leader>/a <Plug>NERDCommenterAppend
-nmap <leader>/$ <Plug>NERDCommenterToEOL
-vmap <Leader>/s <Plug>NERDCommenterSexy
-vmap <Leader>/b <Plug>NERDCommenterMinimal
 
 "neocomplcache
 let g:neocomplcache_enable_at_startup = 1
@@ -340,13 +301,6 @@ let g:neocomplcache_plugin_completion_length = {
   \ 'syntax_complete'   : 2
   \ }
 
-"まだ辞書を用意していないファイルタイプ達
-"  \ 'erlang'     : $HOME . '/.vim/dict/erlang.dict',
-"  \ 'objc'       : $HOME . '/.vim/dict/objc.dict',
-"  \ 'javascript' : $HOME . '/.vim/dict/javascript.dict',
-"  \ 'mxml'       : $HOME . '/.vim/dict/mxml.dict',
-"  \ 'ruby'       : $HOME . '/.vim/dict/ruby.dict',
-"  \ 'scheme'     : $HOME . '/.vim/dict/gauche.dict'
 let g:neocomplcache_dictionary_filetype_lists = {
   \ 'default'    : $HOME . '/.vim/dict/perl.dict',
   \ 'perl'       : $HOME . '/.vim/dict/perl.dict',
@@ -362,7 +316,6 @@ let g:neocomplcache_keyword_patterns = {
   \ 'erlang' : '\v\h\w*(:\h\w*)*'
   \}
 let g:neocomplcache_ctags_program = 'Ectags'
-"let g:neocomplcache_force_caching_buffer_name_pattern = '.\+'
 
 autocmd BufFilePost Manpageview* silent execute ":NeoComplCacheCachingBuffer"
 
@@ -380,8 +333,6 @@ let g:vimfiler_as_default_explorer=1
 let g:vimfiler_safe_mode_by_default=0
 
 " unite.vim
-" 入力モードで開始する
-" let g:unite_enable_start_insert=1
 " バッファ一覧
 nnoremap <silent> <Leader>ub :<C-u>Unite buffer<CR>
 " ファイル一覧
