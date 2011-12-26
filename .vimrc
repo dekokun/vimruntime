@@ -472,6 +472,8 @@ NeoBundle 'vim-scripts/ShowMarks'
 NeoBundle 'vim-scripts/YankRing.vim'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'koron/chalice'
+NeoBundle 'vim-scripts/errormarker.vim'
+NeoBundle 'mattn/gist-vim'
 
 filetype plugin indent on
 "local setting
