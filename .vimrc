@@ -34,6 +34,10 @@ set softtabstop=0
  " オートインデント時の幅を４目盛りに
 set shiftwidth=4
 
+" 小文字のみの入力の際は大文字小文字を区別せずに検索
+set ignorecase
+set smartcase
+
  "閉じ括弧を入力すると対応する括弧にフォーカスが一時的に移動
 set showmatch
 "上記の時間を設定
