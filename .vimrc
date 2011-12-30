@@ -291,31 +291,9 @@ let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_auto_completion_start_length = 1
 let g:neocomplcache_min_keyword_length = 3
 let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 let g:neocomplcache_enable_smart_case = 1
 " Use underbar completion.
 let g:neocomplcache_enable_underbar_completion = 1
-let g:neocomplcache_plugin_completion_length = {
-  \ 'snipMate_complete' : 1,
-  \ 'keyword_complete'  : 2,
-  \ 'syntax_complete'   : 2
-  \ }
-
-let g:neocomplcache_dictionary_filetype_lists = {
-  \ 'default'    : $HOME . '/.vim/dict/perl.dict',
-  \ 'perl'       : $HOME . '/.vim/dict/perl.dict',
-  \ }
-let g:neocomplcache_same_filetype_lists = {
-  \ 'perl'    : 'man',
-  \ 'erlang'  : 'man',
-  \ 'objc'    : 'c',
-  \ 'tt2html' : 'html,perl'
-  \}
-let g:neocomplcache_keyword_patterns = {
-  \ 'perl'   : '\v\<\h\w*\>?|\h\w*(::\h\w*)*|[$@%&*]\h\w*|\h\w*%(\s*\(\)?)?',
-  \ 'erlang' : '\v\h\w*(:\h\w*)*'
-  \}
-let g:neocomplcache_ctags_program = 'Ectags'
 
 autocmd BufFilePost Manpageview* silent execute ":NeoComplCacheCachingBuffer"
 
