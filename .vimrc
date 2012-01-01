@@ -423,6 +423,7 @@ NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'koron/chalice'
 NeoBundle 'vim-scripts/errormarker.vim'
 NeoBundle 'mattn/gist-vim'
+NeoBundle 'tpope/vim-endwise'
 
 filetype plugin indent on
 "local setting
