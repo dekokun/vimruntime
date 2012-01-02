@@ -253,19 +253,6 @@ augroup grepopen
     autocmd QuickFixCmdPost vimgrep cw
 augroup END
 
-" 括弧を自動的に閉じて真ん中にカーソル移動
-inoremap { {}<LEFT>
-inoremap [ []<LEFT>
-inoremap ( ()<LEFT>
-inoremap " ""<LEFT>
-inoremap ' ''<LEFT>
-" 開き括弧と閉じ括弧を入力した場合に閉じ括弧の右にカーソル移動
-inoremap {} {}<LEFT>
-inoremap [] []<LEFT>
-inoremap () ()<LEFT>
-inoremap "" ""<LEFT>
-inoremap '' ''<LEFT>
-
 " shebangでファイルを実行する
 function! ShebangExecute()
     let m = matchlist(getline(1), '#!\(.*\)')
