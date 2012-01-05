@@ -398,7 +398,7 @@ endif
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'tpope-vim-rails'
+NeoBundle 'tpope/vim-rails'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-surround '
 NeoBundle 'motemen/git-vim'
