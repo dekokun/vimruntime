@@ -26,7 +26,7 @@ endfunction
 
 augroup rbsyntaxcheck
   autocmd!
-  autocmd BufWrite *.rb w !echo $'\e[0;31m'; a=`ruby -c %` echo $'\e[m'
+  autocmd BufWrite <buffer> silent make! -c "%" | redraw!
 augroup END
 
 augroup rbsyntaxcheck

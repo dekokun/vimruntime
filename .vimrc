@@ -247,10 +247,11 @@ autocmd BufReadPost *
 \   exe "normal g'\"" |
 \ endif
 
-" vimgrep時に検索結果の一覧を自動で開く
-augroup grepopen
+" QuickFixの結果を自動的に開く設定
+augroup quickfixopen
     autocmd!
     autocmd QuickFixCmdPost vimgrep cw
+    autocmd QuickFixCmdPost make cw
 augroup END
 
 " shebangでファイルを実行する
@@ -385,7 +386,7 @@ endif
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'vim-scripts/rails.vim'
+NeoBundle 'tpope/vim-rails'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-surround '
 NeoBundle 'motemen/git-vim'
