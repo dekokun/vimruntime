@@ -247,10 +247,11 @@ autocmd BufReadPost *
 \   exe "normal g'\"" |
 \ endif
 
-" vimgrep時に検索結果の一覧を自動で開く
-augroup grepopen
+" QuickFixの結果を自動的に開く設定
+augroup quickfixopen
     autocmd!
     autocmd QuickFixCmdPost vimgrep cw
+    autocmd QuickFixCmdPost make cw
 augroup END
 
 " 括弧を自動的に閉じて真ん中にカーソル移動

@@ -1,6 +1,6 @@
 augroup phpsyntaxcheck
   autocmd!
-  autocmd BufWrite *.php w !echo -n $'\e[0;31m'; a=`php -l` echo -n $'\e[m'
+  autocmd BufWrite <buffer> make! -l "%" | redraw!
 augroup END
 
 function! Test()
