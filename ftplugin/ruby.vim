@@ -24,13 +24,6 @@ function! Test()
 endfunction
 
 
-augroup rbsyntaxcheck
-  autocmd!
-  autocmd BufWrite <buffer> silent make! -c "%" | redraw!
-augroup END
-
-augroup rbsyntaxcheck
-
 compiler ruby
 
 set sw=2

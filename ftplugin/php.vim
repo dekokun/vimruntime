@@ -1,8 +1,3 @@
-augroup phpsyntaxcheck
-  autocmd!
-  autocmd BufWrite <buffer> make! -l "%" | redraw!
-augroup END
-
 function! Test()
     let phpunit_pat = 'Test.php$'
     if expand('%:p') =~ phpunit_pat
