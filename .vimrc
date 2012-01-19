@@ -78,7 +78,7 @@ nnoremap <esc><esc> :noh<CR>
 
 " windows用設定
 if has('win32')
-    :set runtimepath+=$HOME/.vim,$HOME/.vim/after
+    set runtimepath+=$HOME/.vim,$HOME/.vim/after
 endif
 
 
@@ -240,6 +240,10 @@ set backup
 set swapfile
 set backupdir=$HOME/.vim/backup
 let &directory = &backupdir
+if has('persistent_undo')
+    set undodir=~/.vimundo
+    set undofile
+endif
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
@@ -412,6 +416,8 @@ NeoBundle 'koron/chalice'
 NeoBundle 'mattn/gist-vim'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'othree/javascript-syntax.vim'
+NeoBundle 'pangloss/vim-javascript'
 
 filetype plugin indent on
 "local setting
