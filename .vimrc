@@ -413,6 +413,7 @@ NeoBundle 'mattn/gist-vim'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'vim-scripts/Javascript-syntax-with-Ajax-Support'
+NeoBundle 'kchmck/vim-coffee-script'
 
 filetype plugin indent on
 "local setting
