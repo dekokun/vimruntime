@@ -3,6 +3,47 @@ set nocompatible
 
 "filetypeの識別(vundleのplugin読み込み完了後にonにする)
 filetype off
+" vundle.vim
+if has('vim_starting')
+    set rtp+=~/.vim/vundle.git/
+    call vundle#rc()
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+    call neobundle#rc(expand('~/.vim/bundle/'))
+endif
+NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'tpope/vim-surround '
+NeoBundle 'motemen/git-vim'
+NeoBundle 'msanders/snipmate.vim'
+"NeoBundle 'vim-scripts/zoom.vim'
+NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'mattn/zencoding-vim'
+" NeoBundle 'http://github.com/csexton/jslint.vim.git'
+NeoBundle 'Shougo/vimfiler'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'vim-jp/vimdoc-ja'
+NeoBundle 'vim-scripts/Align'
+NeoBundle 'vim-scripts/taglist.vim'
+NeoBundle 'sjl/gundo.vim'
+NeoBundle 'thinca/vim-visualstar'
+NeoBundle 'vim-scripts/ShowMarks'
+NeoBundle 'vim-scripts/YankRing.vim'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'koron/chalice'
+NeoBundle 'mattn/gist-vim'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'othree/javascript-syntax.vim'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'kchmck/vim-coffee-script'
+
+filetype plugin indent on
 syntax on
 
 " 行番号を表示する
@@ -375,47 +416,7 @@ command! -nargs=0 -range URLEncode :<line1>,<line2>call <SID>URLEncode()
 command! -nargs=0 -range URLGecode :<line1>,<line2>call <SID>URLDecode()
 
 
-" vundle.vim
-set rtp+=~/.vim/vundle.git/
-call vundle#rc()
-if has('vim_starting')
-     set runtimepath+=~/.vim/bundle/neobundle.vim/
-     call neobundle#rc(expand('~/.vim/bundle/'))
-endif
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'thinca/vim-ref'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'tpope/vim-surround '
-NeoBundle 'motemen/git-vim'
-NeoBundle 'msanders/snipmate.vim'
-"NeoBundle 'vim-scripts/zoom.vim'
-NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'mattn/zencoding-vim'
-" NeoBundle 'http://github.com/csexton/jslint.vim.git'
-NeoBundle 'Shougo/vimfiler'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/vimproc'
-NeoBundle 'vim-jp/vimdoc-ja'
-NeoBundle 'vim-scripts/Align'
-NeoBundle 'vim-scripts/taglist.vim'
-NeoBundle 'sjl/gundo.vim'
-NeoBundle 'thinca/vim-visualstar'
-NeoBundle 'vim-scripts/ShowMarks'
-NeoBundle 'vim-scripts/YankRing.vim'
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'koron/chalice'
-NeoBundle 'mattn/gist-vim'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'othree/javascript-syntax.vim'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'kchmck/vim-coffee-script'
 
-filetype plugin indent on
 "local setting
 if filereadable(expand('$HOME/.vimrc_local'))
     source $HOME/.vimrc_local
