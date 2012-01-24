@@ -3,11 +3,6 @@ set nocompatible
 
 "filetypeの識別(vundleのplugin読み込み完了後にonにする)
 filetype off
-"インデント
-filetype indent on
-"プラグイン
-filetype plugin on
-
 syntax on
 
 " 行番号を表示する
@@ -395,7 +390,7 @@ NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-surround '
 NeoBundle 'motemen/git-vim'
 NeoBundle 'msanders/snipmate.vim'
-NeoBundle 'vim-scripts/zoom.vim'
+"NeoBundle 'vim-scripts/zoom.vim'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'mattn/zencoding-vim'
@@ -418,6 +413,7 @@ NeoBundle 'tpope/vim-endwise'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'othree/javascript-syntax.vim'
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'kchmck/vim-coffee-script'
 
 filetype plugin indent on
 "local setting
