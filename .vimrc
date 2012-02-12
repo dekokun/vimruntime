@@ -64,14 +64,14 @@ set statusline=%<%f\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c
  " BSでなんやかや削除できるようになる
 set backspace=indent,eol,start
 
- "タブの幅を４目盛りに
-set tabstop=4
+ "タブの幅
+set tabstop=2
 
  "タブ文字で挿入される量をtabstopと同じにする
 set softtabstop=0
 
- " オートインデント時の幅を４目盛りに
-set shiftwidth=4
+ " オートインデント時の幅
+set shiftwidth=2
 
 " 小文字のみの入力の際は大文字小文字を区別せずに検索
 set ignorecase
