@@ -42,6 +42,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'othree/javascript-syntax.vim'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'nathanaelkane/vim-indent-guides'
 
 filetype plugin indent on
 syntax on
@@ -399,6 +400,13 @@ nnoremap <Leader>gA :<C-u>GitAdd <cfile><Enter>
 nnoremap <Leader>gc :<C-u>GitCommit -v<Enter>
 nnoremap <Leader>gC :<C-u>GitCommit -v --amend<Enter>
 nnoremap <Leader>gp :<C-u>Git push
+
+
+" vim-indent-guide
+let g:indent_guides_auto_colors = 0
+hi IndentGuidesOdd  ctermbg=white
+hi IndentGuidesEven ctermbg=lightgrey
+let g:indent_guides_enable_on_vim_startup = 1
 
 " Chalice for vimの中のURLエンコード/デコード関数を使いやすくする
 function! s:URLEncode()
