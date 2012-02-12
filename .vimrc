@@ -46,6 +46,9 @@ NeoBundle 'kchmck/vim-coffee-script'
 filetype plugin indent on
 syntax on
 
+" colorscheme
+colorscheme default
+
 " 行番号を表示する
 set number
 
@@ -214,9 +217,6 @@ set fileformats=unix,dos,mac
 if exists('&ambiwidth')
   set ambiwidth=double
 endif
-
-" コメントの色を緑色に
-highlight Comment ctermfg=2
 
 " Yで、その場所から最後までをヤンク
 nnoremap Y y$
