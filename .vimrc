@@ -423,6 +423,9 @@ endfunction
 command! -nargs=0 -range URLEncode :<line1>,<line2>call <SID>URLEncode()
 command! -nargs=0 -range URLGecode :<line1>,<line2>call <SID>URLDecode()
 
+" syntastic
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['html'] }
+
 "local setting
 if filereadable(expand('$HOME/.vimrc_local'))
     source $HOME/.vimrc_local
