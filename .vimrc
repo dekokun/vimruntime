@@ -44,6 +44,7 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'digitaltoad/vim-jade'
+NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'mikewest/vim-markdown'
 
 filetype plugin indent on
@@ -135,6 +136,7 @@ let g:acp_behaviorSnipmateLength = 1
 "quickrun.vimの設定
 let g:quickrun_config = {}
 let g:quickrun_config['ruby.rspec'] = {'command': 'rake spec  RSPECOPTS="-fs -c" '}
+let g:quickrun_config['markdown'] = {'outputter': 'browser'}
 
 "自動的にインデント
 set autoindent
