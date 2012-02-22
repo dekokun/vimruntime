@@ -44,6 +44,7 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'digitaltoad/vim-jade'
+NeoBundle 'mikewest/vim-markdown'
 
 filetype plugin indent on
 syntax on
