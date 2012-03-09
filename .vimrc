@@ -52,6 +52,9 @@ syntax on
 " colorscheme
 colorscheme default
 
+" コメントは緑色に
+highlight Comment ctermfg=2
+
 " 行番号を表示する
 set number
 
