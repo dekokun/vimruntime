@@ -16,7 +16,6 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-surround '
-NeoBundle 'motemen/git-vim'
 NeoBundle 'msanders/snipmate.vim'
 "NeoBundle 'vim-scripts/zoom.vim'
 NeoBundle 'tomtom/tcomment_vim'
@@ -396,15 +395,15 @@ let g:yankring_history_file = '.vim_yankring_history'
 " git-vim
 let g:git_no_map_default = 1
 let g:git_command_edit = 'rightbelow vnew'
-nnoremap <Leader>gd :<C-u>GitDiff<Enter>
-nnoremap <Leader>gD :<C-u>GitDiff --cached<Enter>
-nnoremap <Leader>gs :<C-u>GitStatus<Enter>
-nnoremap <Leader>gl :<C-u>GitLog<Enter>
-nnoremap <Leader>gL :<C-u>GitLog -u \| head -10000<Enter>
-nnoremap <Leader>ga :<C-u>GitAdd<Enter>
-nnoremap <Leader>gA :<C-u>GitAdd <cfile><Enter>
-nnoremap <Leader>gc :<C-u>GitCommit -v<Enter>
-nnoremap <Leader>gC :<C-u>GitCommit -v --amend<Enter>
+nnoremap <Leader>gd :<C-u>Gdiff<Enter>
+nnoremap <Leader>gD :<C-u>Gdiff --cached<Enter>
+nnoremap <Leader>gs :<C-u>Gstatus<Enter>
+nnoremap <Leader>gl :<C-u>Glog<Enter>
+nnoremap <Leader>gL :<C-u>Glog -u \| head -10000<Enter>
+nnoremap <Leader>ga :<C-u>Gwrite<Enter>
+nnoremap <Leader>gA :<C-u>Gwrite <cfile><Enter>
+nnoremap <Leader>gc :<C-u>Gcommit -v<Enter>
+nnoremap <Leader>gC :<C-u>Gcommit -v --amend<Enter>
 nnoremap <Leader>gp :<C-u>Git push
 
 
