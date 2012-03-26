@@ -392,9 +392,7 @@ nnoremap <F5> :GundoToggle<CR>
 let g:yankring_history_dir = expand('$HOME')
 let g:yankring_history_file = '.vim_yankring_history'
 
-" git-vim
-let g:git_no_map_default = 1
-let g:git_command_edit = 'rightbelow vnew'
+" git-fugitive
 nnoremap <Leader>gd :<C-u>Gdiff<Enter>
 nnoremap <Leader>gD :<C-u>Gdiff --cached<Enter>
 nnoremap <Leader>gs :<C-u>Gstatus<Enter>
