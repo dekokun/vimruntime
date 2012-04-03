@@ -240,13 +240,6 @@ nnoremap <Leader>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
 nnoremap <Leader>V :Vexplore!<CR><CR>
 
 
-"タブ操作を快適に
-nnoremap <Up> :tabedit
-nnoremap <Down> :tabclose
-nnoremap <Left> :tabprev<CR>
-nnoremap <Right> :tabnext<CR>
-
-
 " 入力モード中は、emacsライクに動けるように。
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
