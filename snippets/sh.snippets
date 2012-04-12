@@ -26,3 +26,9 @@ snippet case
 		${2:pattern})
 			${3};;
 	esac
+
+snippet forseq
+	for i in \`seq 1 ${1:lastnum}\`
+	do
+		${2:#statements}
+	done
