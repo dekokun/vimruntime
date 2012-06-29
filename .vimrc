@@ -46,15 +46,14 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'vim-scripts/sudo.vim'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tyru/eskk.vim'
+NeoBundle 'vim-scripts/desert256.vim'
 
 filetype plugin indent on
 syntax on
 
 " colorscheme
-colorscheme default
-
-" コメントは緑色に
-highlight Comment ctermfg=2
+colorscheme desert256
 
 " 行番号を表示する
 set number
