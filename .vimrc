@@ -132,8 +132,6 @@ source $VIMRUNTIME/macros/matchit.vim
 
 "snipmateを使用できるように
 let snippets_dir = "$HOME/.vim/snippets/"
-" snipmate連携
-let g:acp_behaviorSnipmateLength = 1
 
 "quickrun.vimの設定
 let g:quickrun_config = {}
