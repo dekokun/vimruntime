@@ -47,13 +47,12 @@ NeoBundle 'tpope/vim-markdown'
 NeoBundle 'vim-scripts/sudo.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'ujihisa/neco-ghc'
-NeoBundle 'vim-scripts/desert256.vim'
 
 filetype plugin indent on
 syntax on
 
 " colorscheme
-colorscheme desert256
+colorscheme default
 
 " 行番号を表示する
 set number
