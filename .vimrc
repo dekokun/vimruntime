@@ -20,6 +20,7 @@ NeoBundle 'msanders/snipmate.vim'
 "NeoBundle 'vim-scripts/zoom.vim'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neocomplcache-snippets-complete'
 NeoBundle 'mattn/zencoding-vim'
 " NeoBundle 'http://github.com/csexton/jslint.vim.git'
 NeoBundle 'Shougo/vimfiler'
@@ -46,15 +47,13 @@ NeoBundle 'tpope/vim-markdown'
 NeoBundle 'vim-scripts/sudo.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'ujihisa/neco-ghc'
+NeoBundle 'vim-scripts/desert256.vim'
 
 filetype plugin indent on
 syntax on
 
 " colorscheme
-colorscheme default
-
-" コメントは緑色に
-highlight Comment ctermfg=2
+colorscheme desert256
 
 " 行番号を表示する
 set number
@@ -133,8 +132,6 @@ source $VIMRUNTIME/macros/matchit.vim
 
 "snipmateを使用できるように
 let snippets_dir = "$HOME/.vim/snippets/"
-" snipmate連携
-let g:acp_behaviorSnipmateLength = 1
 
 "quickrun.vimの設定
 let g:quickrun_config = {}
@@ -427,3 +424,5 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['html'] }
 if filereadable(expand('$HOME/.vimrc_local'))
     source $HOME/.vimrc_local
 endif
+
+let g:neobundle_default_git_protocol='https'
