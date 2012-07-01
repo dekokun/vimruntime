@@ -45,6 +45,7 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'vim-scripts/sudo.vim'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'ujihisa/neco-ghc'
 
 filetype plugin indent on
 syntax on
