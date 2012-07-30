@@ -55,7 +55,7 @@ filetype plugin indent on
 syntax on
 
 " colorscheme
-colorscheme desert256
+colorscheme default
 
 " 行番号を表示する
 set number
