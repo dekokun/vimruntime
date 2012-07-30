@@ -48,6 +48,7 @@ NeoBundle 'vim-scripts/sudo.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tyru/eskk.vim'
 NeoBundle 'vim-scripts/desert256.vim'
+NeoBundle 'kana/vim-scratch'
 
 filetype plugin indent on
 syntax on
