@@ -51,6 +51,7 @@ NeoBundle 'vim-scripts/desert256.vim'
 NeoBundle 'kana/vim-scratch'
 NeoBundle 'ujihisa/neco-ghc'
 NeoBundle 'eagletmt/ghcmod-vim'
+NeoBundle 'Shougo/vinarise'
 
 filetype plugin indent on
 syntax on
