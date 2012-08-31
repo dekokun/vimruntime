@@ -107,6 +107,9 @@ set wrap
 " インクリメンタル検索を行う
 set incsearch
 
+" カーソル位置を表示
+set cursorline
+
 " LeaderをSpaceに
 let mapleader = ' '
 
