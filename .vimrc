@@ -373,6 +373,8 @@ nnoremap <silent> <Leader>um :<C-u>Unite file_mru<CR>
 nnoremap <silent> <Leader>uu :<C-u>Unite buffer file_mru<CR>
 " 全部乗せ
 nnoremap <silent> <Leader>ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+" 現ディレクトリ以下
+nnoremap <silent> <Leader>ufr :<C-u>Unite file_rec<CR>
 
 augroup unite
   autocmd!
