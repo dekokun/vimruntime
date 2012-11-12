@@ -16,11 +16,10 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-surround '
-NeoBundle 'msanders/snipmate.vim'
 "NeoBundle 'vim-scripts/zoom.vim'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neocomplcache-snippets-complete'
+NeoBundle 'Shougo/neosnippet'
 NeoBundle 'mattn/zencoding-vim'
 " NeoBundle 'http://github.com/csexton/jslint.vim.git'
 NeoBundle 'Shougo/vimfiler'
@@ -136,9 +135,6 @@ endif
 
 "%でdo-endやHTMLのタグの対応先にジャンプできるように
 source $VIMRUNTIME/macros/matchit.vim
-
-"snipmateを使用できるように
-let snippets_dir = "$HOME/.vim/snippets/"
 
 "quickrun.vimの設定
 let g:quickrun_config = {}
