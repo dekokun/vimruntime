@@ -49,6 +49,7 @@ NeoBundle 'kana/vim-scratch'
 NeoBundle 'ujihisa/neco-ghc'
 NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'Shougo/vinarise'
+NeoBundle 'pbrisbin/html-template-syntax'
 
 filetype plugin indent on
 syntax on
