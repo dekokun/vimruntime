@@ -50,6 +50,7 @@ NeoBundle 'ujihisa/neco-ghc'
 NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'Shougo/vinarise'
 NeoBundle 'pbrisbin/html-template-syntax'
+NeoBundle 'dag/vim2hs'
 
 filetype plugin indent on
 syntax on
