@@ -5,8 +5,6 @@ set nocompatible
 filetype off
 " vundle.vim
 if has('vim_starting')
-    set rtp+=~/.vim/vundle.git/
-    call vundle#rc()
     set runtimepath+=~/.vim/bundle/neobundle.vim/
     call neobundle#rc(expand('~/.vim/bundle/'))
 endif
@@ -16,11 +14,10 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-surround '
-NeoBundle 'msanders/snipmate.vim'
 "NeoBundle 'vim-scripts/zoom.vim'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neocomplcache-snippets-complete'
+NeoBundle 'Shougo/neosnippet'
 NeoBundle 'mattn/zencoding-vim'
 " NeoBundle 'http://github.com/csexton/jslint.vim.git'
 NeoBundle 'Shougo/vimfiler'
@@ -52,6 +49,8 @@ NeoBundle 'kana/vim-scratch'
 NeoBundle 'ujihisa/neco-ghc'
 NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'Shougo/vinarise'
+NeoBundle 'pbrisbin/html-template-syntax'
+NeoBundle 'dag/vim2hs'
 
 filetype plugin indent on
 syntax on
@@ -136,9 +135,6 @@ endif
 
 "%でdo-endやHTMLのタグの対応先にジャンプできるように
 source $VIMRUNTIME/macros/matchit.vim
-
-"snipmateを使用できるように
-let snippets_dir = "$HOME/.vim/snippets/"
 
 "quickrun.vimの設定
 let g:quickrun_config = {}
