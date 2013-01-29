@@ -8,6 +8,7 @@ if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
     call neobundle#rc(expand('~/.vim/bundle/'))
 endif
+let g:neobundle_default_git_protocol='https'
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
@@ -429,5 +430,3 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['html'] }
 if filereadable(expand('$HOME/.vimrc_local'))
     source $HOME/.vimrc_local
 endif
-
-let g:neobundle_default_git_protocol='https'
