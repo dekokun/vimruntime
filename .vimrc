@@ -73,13 +73,13 @@ set statusline=%<%f\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c
 set backspace=indent,eol,start
 
  "タブの幅
-set tabstop=2
+set tabstop=4
 
  "タブ文字で挿入される量をtabstopと同じにする
 set softtabstop=0
 
  " オートインデント時の幅
-set shiftwidth=2
+set shiftwidth=4
 
 " 小文字のみの入力の際は大文字小文字を区別せずに検索
 set ignorecase
