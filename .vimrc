@@ -8,17 +8,17 @@ if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
     call neobundle#rc(expand('~/.vim/bundle/'))
 endif
+let g:neobundle_default_git_protocol='https'
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'tpope/vim-rails'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-surround '
 "NeoBundle 'vim-scripts/zoom.vim'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
-NeoBundle 'mattn/zencoding-vim'
+NeoBundle 'mattn/emmet-vim'
 " NeoBundle 'http://github.com/csexton/jslint.vim.git'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/unite.vim'
@@ -50,6 +50,7 @@ NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'Shougo/vinarise'
 NeoBundle 'pbrisbin/html-template-syntax'
 NeoBundle 'dag/vim2hs'
+NeoBundle 'timcharper/textile.vim'
 
 filetype plugin indent on
 syntax on
@@ -73,13 +74,13 @@ set statusline=%<%f\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c
 set backspace=indent,eol,start
 
  "タブの幅
-set tabstop=2
+set tabstop=4
 
  "タブ文字で挿入される量をtabstopと同じにする
 set softtabstop=0
 
  " オートインデント時の幅
-set shiftwidth=2
+set shiftwidth=4
 
 " 小文字のみの入力の際は大文字小文字を区別せずに検索
 set ignorecase
@@ -428,5 +429,3 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['html'] }
 if filereadable(expand('$HOME/.vimrc_local'))
     source $HOME/.vimrc_local
 endif
-
-let g:neobundle_default_git_protocol='https'
