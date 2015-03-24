@@ -66,6 +66,7 @@ filetype plugin indent on
 NeoBundleCheck
 
 
+" syntax ハイライトを入れる
 syntax on
 
 " colorscheme
