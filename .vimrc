@@ -1,15 +1,23 @@
-" vi互換モードをオフに
-set nocompatible
-
 "filetypeの識別(vundleのplugin読み込み完了後にonにする)
-filetype off
-" vundle.vim
+if !1 | finish | endif
+
 if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
-    call neobundle#rc(expand('~/.vim/bundle/'))
+  if &compatible
+    set nocompatible " Be iMproved
+  endif
+
+  " Required:
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
+
 let g:neobundle_default_git_protocol='https'
-NeoBundle 'Shougo/neobundle.vim'
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'vim-ruby/vim-ruby'
@@ -52,7 +60,12 @@ NeoBundle 'pbrisbin/html-template-syntax'
 NeoBundle 'dag/vim2hs'
 NeoBundle 'timcharper/textile.vim'
 
+call neobundle#end()
+
 filetype plugin indent on
+NeoBundleCheck
+
+
 syntax on
 
 " colorscheme
