@@ -41,6 +41,7 @@ NeoBundle 'vim-scripts/sudo.vim'
 NeoBundle 'vim-scripts/desert256.vim'
 NeoBundle 'Shougo/vinarise'
 NeoBundle 'timcharper/textile.vim'
+NeoBundle 'tpope/vim-fugitive'
 
 call neobundle#end()
 
