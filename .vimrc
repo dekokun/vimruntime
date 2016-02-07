@@ -50,6 +50,22 @@ NeoBundle 'kana/vim-scratch'
 NeoBundle 'Shougo/vinarise'
 NeoBundle 'pbrisbin/html-template-syntax'
 NeoBundle 'timcharper/textile.vim'
+NeoBundle 'motemen/hatena-vim'
+NeoBundle 'fatih/vim-go'
+NeoBundleLazy 'leafgarland/typescript-vim', {
+\ 'autoload' : {
+\   'filetypes' : ['typescript'] }
+\}
+NeoBundleLazy 'jason0x43/vim-js-indent', {
+\ 'autoload' : {
+\   'filetypes' : ['javascript', 'typescript', 'html'],
+\}}
+let g:js_indent_typescript = 1
+NeoBundleLazy 'clausreinke/typescript-tools.vim', {
+\ 'build' : 'npm install -g',
+\ 'autoload' : {
+\   'filetypes' : ['typescript'] }
+\}
 
 call neobundle#end()
 
