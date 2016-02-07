@@ -18,7 +18,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tomtom/tcomment_vim'
@@ -26,29 +25,21 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'mattn/emmet-vim'
-NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'vim-jp/vimdoc-ja'
-NeoBundle 'vim-scripts/Align'
-NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'thinca/vim-visualstar'
-NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'othree/javascript-syntax.vim'
 NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'rcmdnk/vim-markdown'
 NeoBundle 'vim-scripts/sudo.vim'
-NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'vim-scripts/desert256.vim'
-NeoBundle 'kana/vim-scratch'
 NeoBundle 'Shougo/vinarise'
-NeoBundle 'pbrisbin/html-template-syntax'
 NeoBundle 'timcharper/textile.vim'
 NeoBundle 'motemen/hatena-vim'
 NeoBundle 'fatih/vim-go'
@@ -66,12 +57,22 @@ NeoBundleLazy 'clausreinke/typescript-tools.vim', {
 \ 'autoload' : {
 \   'filetypes' : ['typescript'] }
 \}
+NeoBundle 'vim-erlang/vim-erlang-runtime'
+NeoBundle 'vim-erlang/vim-erlang-omnicomplete'
+NeoBundle 'vim-erlang/vim-erlang-tags'
+NeoBundle 'vim-erlang/vim-erlang-compiler'
+NeoBundle 'vim-erlang/erlang-motions.vim'
+NeoBundle 'vim-erlang/vim-rebar'
+NeoBundle 'vim-erlang/vim-dialyzer'
+NeoBundle 'vim-erlang/vim-erlang-skeletons'
+NeoBundle 'tpope/vim-fugitive'
 
 call neobundle#end()
 
 filetype plugin indent on
 NeoBundleCheck
 
+let g:syntastic_erlang_checkers=['syntaxerl']
 
 " syntax ハイライトを入れる
 syntax on
