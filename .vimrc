@@ -50,12 +50,21 @@ NeoBundle 'kana/vim-scratch'
 NeoBundle 'Shougo/vinarise'
 NeoBundle 'pbrisbin/html-template-syntax'
 NeoBundle 'timcharper/textile.vim'
+NeoBundle 'vim-erlang/vim-erlang-runtime'
+NeoBundle 'vim-erlang/vim-erlang-omnicomplete'
+NeoBundle 'vim-erlang/vim-erlang-tags'
+NeoBundle 'vim-erlang/vim-erlang-compiler'
+NeoBundle 'vim-erlang/erlang-motions.vim'
+NeoBundle 'vim-erlang/vim-rebar'
+NeoBundle 'vim-erlang/vim-dialyzer'
+NeoBundle 'vim-erlang/vim-erlang-skeletons'
 
 call neobundle#end()
 
 filetype plugin indent on
 NeoBundleCheck
 
+let g:syntastic_erlang_checkers=['syntaxerl']
 
 " syntax ハイライトを入れる
 syntax on
