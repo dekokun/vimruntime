@@ -73,6 +73,8 @@ filetype plugin indent on
 NeoBundleCheck
 
 let g:syntastic_erlang_checkers=['syntaxerl']
+let g:vim_markdown_folding_disabled=1
+
 
 " syntax ハイライトを入れる
 syntax on
