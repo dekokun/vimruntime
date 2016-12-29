@@ -25,7 +25,6 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'mattn/emmet-vim'
-NeoBundle 'Shougo/unite.vim'
 NeoBundle 'vim-jp/vimdoc-ja'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'thinca/vim-visualstar'
@@ -43,6 +42,7 @@ NeoBundle 'Shougo/vinarise'
 NeoBundle 'timcharper/textile.vim'
 NeoBundle 'motemen/hatena-vim'
 NeoBundle 'fatih/vim-go'
+NeoBundle "ctrlpvim/ctrlp.vim"
 NeoBundleLazy 'leafgarland/typescript-vim', {
 \ 'autoload' : {
 \   'filetypes' : ['typescript'] }
