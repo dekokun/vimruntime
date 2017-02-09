@@ -42,6 +42,8 @@ NeoBundle 'Shougo/vinarise'
 NeoBundle 'timcharper/textile.vim'
 NeoBundle 'motemen/hatena-vim'
 NeoBundle 'fatih/vim-go'
+NeoBundle 'rust-lang/rust.vim'
+NeoBundle 'racer-rust/vim-racer'
 NeoBundle "ctrlpvim/ctrlp.vim"
 NeoBundleLazy 'leafgarland/typescript-vim', {
 \ 'autoload' : {
@@ -469,3 +471,14 @@ function! s:open_junk_file()
   endif
 endfunction"}}}
 nnoremap <Leader>, :<C-u>:JunkFile<Enter>
+
+" rust
+let g:rustfmt_autosave = 1
+let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
+
+set hidden
+let g:racer_cmd = '$HOME/.cargo/bin/racer'
+autocmd BufNewFile,BufRead *.crs setf rust
+autocmd BufNewFile,BufRead *.rs  let g:quickrun_config.rust = {'exec' : 'cargo run'}
+autocmd BufNewFile,BufRead *.crs let g:quickrun_config.rust = {'exec' : 'cargo script %s -- %a'}
+
