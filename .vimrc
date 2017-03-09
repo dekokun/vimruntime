@@ -29,7 +29,7 @@ NeoBundle 'vim-jp/vimdoc-ja'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'thinca/vim-visualstar'
 NeoBundle 'tpope/vim-endwise'
-NeoBundle 'scrooloose/syntastic'
+NeoBundle 'vim-syntastic/syntastic'
 NeoBundle 'othree/javascript-syntax.vim'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'nathanaelkane/vim-indent-guides'
@@ -75,6 +75,7 @@ filetype plugin indent on
 NeoBundleCheck
 
 let g:syntastic_erlang_checkers=['syntaxerl']
+let g:syntastic_rust_checkers = ['cargo']   "" 'cargo'を追加する
 let g:vim_markdown_folding_disabled=1
 
 
