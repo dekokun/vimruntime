@@ -21,19 +21,16 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neocomplete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'mattn/emmet-vim'
 NeoBundle 'vim-jp/vimdoc-ja'
-NeoBundle 'sjl/gundo.vim'
 NeoBundle 'thinca/vim-visualstar'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'vim-syntastic/syntastic'
 NeoBundle 'othree/javascript-syntax.vim'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'rcmdnk/vim-markdown'
 NeoBundle 'vim-scripts/sudo.vim'
@@ -45,6 +42,8 @@ NeoBundle 'fatih/vim-go'
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'racer-rust/vim-racer'
 NeoBundle "ctrlpvim/ctrlp.vim"
+NeoBundle "google/vim-colorscheme-primary"
+NeoBundle "google/vim-searchindex"
 NeoBundleLazy 'leafgarland/typescript-vim', {
 \ 'autoload' : {
 \   'filetypes' : ['typescript'] }
@@ -80,10 +79,11 @@ let g:vim_markdown_folding_disabled=1
 
 
 " syntax ハイライトを入れる
+" vim-colorscheme-primaryの設定
 syntax on
-
-" colorscheme
-colorscheme default
+set t_Co=256
+set background=dark
+colorscheme primary
 
 " 行番号を表示する
 set number
@@ -359,21 +359,32 @@ augroup END
 " crontabを編集するときはバックアップを行わない。行うとcrontabが編集できなくなる
 autocmd BufRead /tmp/crontab.* :set nobackup nowritebackup
 
-"neocomplcache
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_auto_completion_start_length = 1
-let g:neocomplcache_min_keyword_length = 3
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_enable_smart_case = 1
-" Use underbar completion.
-let g:neocomplcache_enable_underbar_completion = 1
+"neocomplete
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+  let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
 
 autocmd BufFilePost Manpageview* silent execute ":NeoComplCacheCachingBuffer"
-
-"スニペットを展開
-imap <silent><C-l>     <Plug>(neocomplcache_snippets_expand)
-smap <silent><C-l>     <Plug>(neocomplcache_snippets_expand)
-nnoremap <Leader>s  :NeoComplCacheEditSnippets<CR>
 
 " Zencoding
 " スペースインデント
