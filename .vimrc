@@ -5,43 +5,35 @@ if has('vim_starting')
   if &compatible
     set nocompatible " Be iMproved
   endif
-
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-let g:neobundle_default_git_protocol='https'
+" Specify a directory for plugins
+call plug#begin('~/.vim/plugged')
 " Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
 
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+Plug 'thinca/vim-quickrun'
+Plug 'vim-jp/vimdoc-ja'
+Plug 'thinca/vim-visualstar'
+Plug 'tpope/vim-endwise'
+Plug 'vim-syntastic/syntastic'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'rcmdnk/vim-markdown'
+Plug 'vim-scripts/desert256.vim'
+Plug 'Shougo/vinarise'
+Plug 'timcharper/textile.vim'
+Plug 'motemen/hatena-vim'
+Plug 'fatih/vim-go'
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'google/vim-colorscheme-primary'
+Plug 'google/vim-searchindex'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-fugitive'
 
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'vim-jp/vimdoc-ja'
-NeoBundle 'thinca/vim-visualstar'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'vim-syntastic/syntastic'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'rcmdnk/vim-markdown'
-NeoBundle 'vim-scripts/desert256.vim'
-NeoBundle 'Shougo/vinarise'
-NeoBundle 'timcharper/textile.vim'
-NeoBundle 'motemen/hatena-vim'
-NeoBundle 'fatih/vim-go'
-NeoBundle 'rust-lang/rust.vim'
-NeoBundle 'racer-rust/vim-racer'
-NeoBundle "ctrlpvim/ctrlp.vim"
-NeoBundle "google/vim-colorscheme-primary"
-NeoBundle "google/vim-searchindex"
-NeoBundle 'editorconfig/editorconfig-vim'
-NeoBundle 'tpope/vim-fugitive'
-
-call neobundle#end()
+call plug#end()
 
 filetype plugin indent on
-NeoBundleCheck
 
 let g:syntastic_erlang_checkers=['syntaxerl']
 let g:syntastic_rust_checkers = ['cargo']   "" 'cargo'を追加する
