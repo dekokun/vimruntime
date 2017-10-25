@@ -12,11 +12,13 @@ call plug#begin('~/.vim/plugged')
 " Required:
 
 Plug 'Shougo/vinarise'
+Plug 'SirVer/ultisnips'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'google/vim-colorscheme-primary'
 Plug 'google/vim-searchindex'
+Plug 'maralla/completor.vim'
 Plug 'motemen/hatena-vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'racer-rust/vim-racer', {'for': 'rust'}
