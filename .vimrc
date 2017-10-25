@@ -18,6 +18,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'google/vim-colorscheme-primary'
 Plug 'google/vim-searchindex'
+Plug 'honza/vim-snippets'
 Plug 'maralla/completor.vim'
 Plug 'motemen/hatena-vim'
 Plug 'nathanaelkane/vim-indent-guides'
