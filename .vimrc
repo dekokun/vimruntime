@@ -11,25 +11,25 @@ endif
 call plug#begin('~/.vim/plugged')
 " Required:
 
-Plug 'thinca/vim-quickrun'
-Plug 'vim-jp/vimdoc-ja'
-Plug 'thinca/vim-visualstar'
-Plug 'tpope/vim-endwise'
-Plug 'vim-syntastic/syntastic'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
-Plug 'vim-scripts/desert256.vim'
 Plug 'Shougo/vinarise'
-Plug 'timcharper/textile.vim'
-Plug 'motemen/hatena-vim'
-Plug 'fatih/vim-go', {'for': 'go'}
-Plug 'rust-lang/rust.vim', {'for': 'rust'}
-Plug 'racer-rust/vim-racer', {'for': 'rust'}
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'google/vim-colorscheme-primary'
 Plug 'google/vim-searchindex'
-Plug 'editorconfig/editorconfig-vim'
+Plug 'motemen/hatena-vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'racer-rust/vim-racer', {'for': 'rust'}
+Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
+Plug 'rust-lang/rust.vim', {'for': 'rust'}
+Plug 'thinca/vim-quickrun'
+Plug 'thinca/vim-visualstar'
+Plug 'timcharper/textile.vim'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
+Plug 'vim-jp/vimdoc-ja'
+Plug 'vim-scripts/desert256.vim'
+Plug 'vim-syntastic/syntastic'
 
 call plug#end()
 
