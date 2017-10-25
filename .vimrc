@@ -19,21 +19,12 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'Shougo/neocomplete'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'vim-jp/vimdoc-ja'
 NeoBundle 'thinca/vim-visualstar'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'vim-syntastic/syntastic'
-NeoBundle 'othree/javascript-syntax.vim'
-NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'rcmdnk/vim-markdown'
-NeoBundle 'vim-scripts/sudo.vim'
 NeoBundle 'vim-scripts/desert256.vim'
 NeoBundle 'Shougo/vinarise'
 NeoBundle 'timcharper/textile.vim'
@@ -44,28 +35,7 @@ NeoBundle 'racer-rust/vim-racer'
 NeoBundle "ctrlpvim/ctrlp.vim"
 NeoBundle "google/vim-colorscheme-primary"
 NeoBundle "google/vim-searchindex"
-NeoBundleLazy 'leafgarland/typescript-vim', {
-\ 'autoload' : {
-\   'filetypes' : ['typescript'] }
-\}
-NeoBundleLazy 'jason0x43/vim-js-indent', {
-\ 'autoload' : {
-\   'filetypes' : ['javascript', 'typescript', 'html'],
-\}}
-let g:js_indent_typescript = 1
-NeoBundleLazy 'clausreinke/typescript-tools.vim', {
-\ 'build' : 'npm install -g',
-\ 'autoload' : {
-\   'filetypes' : ['typescript'] }
-\}
-NeoBundle 'vim-erlang/vim-erlang-runtime'
-NeoBundle 'vim-erlang/vim-erlang-omnicomplete'
-NeoBundle 'vim-erlang/vim-erlang-tags'
-NeoBundle 'vim-erlang/vim-erlang-compiler'
-NeoBundle 'vim-erlang/erlang-motions.vim'
-NeoBundle 'vim-erlang/vim-rebar'
-NeoBundle 'vim-erlang/vim-dialyzer'
-NeoBundle 'vim-erlang/vim-erlang-skeletons'
+NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'tpope/vim-fugitive'
 
 call neobundle#end()
