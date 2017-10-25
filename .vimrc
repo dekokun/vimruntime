@@ -218,9 +218,6 @@ endif
 " Yで、その場所から最後までをヤンク
 nnoremap Y y$
 
-" yyy で全部を貼り付け
-nnoremap yyy ggyG
-
 "バッファ操作を快適に
 nnoremap <C-n> :bn<CR>
 nnoremap <C-p> :bp<CR>
@@ -238,7 +235,6 @@ inoremap <C-n> <Down>
 inoremap <C-e> <end>
 inoremap <C-a> <home>
 inoremap <C-d> <Del>
-inoremap <C-w> <esc>cb<Del>
 
 " コマンドモード中も上記同様
 cnoremap <C-f> <Right>
@@ -249,12 +245,6 @@ cnoremap <C-d> <Del>
 
 "スペース*と記入することにより、カーソル下の単語を置換
 nnoremap <expr> <Leader>* ':%substitute/\<' . expand('<cword>') . '\>/'
-"スペース:と記入することにより、カーソル下の文字を置換
-nnoremap <expr> <Leader>: ':%substitute/' . expand('<cword>') . '/'
-
-
-"スペース+と記入することにより、カーソル下の単語をvimgrep
-nnoremap <expr> <Leader>; ':vimgrep ' . expand('<cword>') . ' **/* \| cwin'
 
 "特殊文字(SpecialKey)の見える化。listcharsはlcsでも設定可能。
 ""trailは行末スペース。
@@ -312,82 +302,8 @@ let g:Align_xstrlen = 3
 ":Big the window Big!
 command! Big wincmd _ | wincmd |
 
-" rspecファイルのファイルタイプ変更
-augroup UjihisaRSpec
-  autocmd!
-  autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
-augroup END
-
 " crontabを編集するときはバックアップを行わない。行うとcrontabが編集できなくなる
 autocmd BufRead /tmp/crontab.* :set nobackup nowritebackup
-
-"neocomplete
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-" Define dictionary.
-let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
-" Define keyword.
-if !exists('g:neocomplete#keyword_patterns')
-  let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-" Plugin key-mappings.
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-" Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-
-autocmd BufFilePost Manpageview* silent execute ":NeoComplCacheCachingBuffer"
-
-" Zencoding
-" スペースインデント
-let g:user_zen_settings = { 'indentation':'  ' }
-
-" VimFiler
-let g:vimfiler_as_default_explorer=1
-let g:vimfiler_safe_mode_by_default=0
-
-" unite.vim
-" バッファ一覧
-nnoremap <silent> <Leader>ub :<C-u>Unite buffer<CR>
-" ファイル一覧
-nnoremap <silent> <Leader>uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-" レジスタ一覧
-nnoremap <silent> <Leader>ur :<C-u>Unite -buffer-name=register register<CR>
-" 最近使用したファイル一覧
-nnoremap <silent> <Leader>um :<C-u>Unite file_mru<CR>
-" 常用セット
-nnoremap <silent> <Leader>uu :<C-u>Unite buffer file_mru<CR>
-" 全部乗せ
-nnoremap <silent> <Leader>ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
-" 現ディレクトリ以下
-nnoremap <silent> <Leader>ufr :<C-u>Unite file_rec<CR>
-
-augroup unite
-  autocmd!
-  " ウィンドウを分割して開く
-  autocmd FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
-  autocmd FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
-  " ウィンドウを縦に分割して開く
-  autocmd FileType unite nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
-  autocmd FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
-augroup END
-
-" Gundo.vim
-nnoremap <F5> :GundoToggle<CR>
-
-" YankRing.vim
-let g:yankring_history_dir = expand('$HOME')
-let g:yankring_history_file = '.vim_yankring_history'
 
 " git-fugitive
 nnoremap <Leader>gd :<C-u>Gdiff<Enter>
@@ -455,4 +371,3 @@ let g:racer_cmd = '$HOME/.cargo/bin/racer'
 autocmd BufNewFile,BufRead *.crs setf rust
 autocmd BufNewFile,BufRead *.rs  let g:quickrun_config.rust = {'exec' : 'cargo run'}
 autocmd BufNewFile,BufRead *.crs let g:quickrun_config.rust = {'exec' : 'cargo script %s -- %a'}
-
