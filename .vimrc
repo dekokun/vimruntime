@@ -17,14 +17,14 @@ Plug 'thinca/vim-visualstar'
 Plug 'tpope/vim-endwise'
 Plug 'vim-syntastic/syntastic'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'rcmdnk/vim-markdown'
+Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
 Plug 'vim-scripts/desert256.vim'
 Plug 'Shougo/vinarise'
 Plug 'timcharper/textile.vim'
 Plug 'motemen/hatena-vim'
-Plug 'fatih/vim-go'
-Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
+Plug 'fatih/vim-go', {'for': 'go'}
+Plug 'rust-lang/rust.vim', {'for': 'rust'}
+Plug 'racer-rust/vim-racer', {'for': 'rust'}
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'google/vim-colorscheme-primary'
 Plug 'google/vim-searchindex'
