@@ -371,3 +371,8 @@ let g:racer_cmd = '$HOME/.cargo/bin/racer'
 autocmd BufNewFile,BufRead *.crs setf rust
 autocmd BufNewFile,BufRead *.rs  let g:quickrun_config.rust = {'exec' : 'cargo run'}
 autocmd BufNewFile,BufRead *.crs let g:quickrun_config.rust = {'exec' : 'cargo script %s -- %a'}
+
+" ctrlp.vim
+" デフォルトのc-pはbuffer操作で使用しているので変える
+let g:ctrlp_map = '<c-r>'
+
