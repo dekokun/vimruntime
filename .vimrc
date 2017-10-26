@@ -380,6 +380,8 @@ autocmd BufNewFile,BufRead *.crs let g:quickrun_config.rust = {'exec' : 'cargo s
 let g:ctrlp_map = '<c-r>'
 " 一度作ったキャッシュを消さない
 let g:ctrlp_clear_cache_on_exit = 0
+" MRUなどからも検索
+let g:ctrlp_cmd = 'CtrlPMixed'
 if executable('ag')
   " agがあればagを使う
   set grepprg=ag\ --nogroup\ --nocolor
@@ -387,8 +389,6 @@ if executable('ag')
   " ctrlpもagを使う
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
-  " agは早いのでキャッシュは使わない
-  let g:ctrlp_use_caching = 0
 endif
 
 " golang
