@@ -380,6 +380,7 @@ autocmd BufNewFile,BufRead *.crs let g:quickrun_config.rust = {'exec' : 'cargo s
 let g:ctrlp_map = '<c-r>'
 " 一度作ったキャッシュを消さない
 let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_show_hidden = 1
 " MRUなどからも検索
 let g:ctrlp_cmd = 'CtrlPMixed'
 if executable('ag')
