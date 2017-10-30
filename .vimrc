@@ -24,7 +24,7 @@ Plug 'motemen/hatena-vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'racer-rust/vim-racer', {'for': 'rust'}
 Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
-Plug 'rhysd/rust-doc.vim'
+Plug 'rhysd/rust-doc.vim', {'for': 'rust'}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'thinca/vim-quickrun'
 Plug 'thinca/vim-visualstar'
