@@ -25,6 +25,7 @@ Plug 'motemen/hatena-vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'racer-rust/vim-racer', {'for': 'rust'}
 Plug 'rcmdnk/vim-markdown', {'for': 'markdown'}
+Plug 'rhysd/rust-doc.vim', {'for': 'rust'}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'thinca/vim-quickrun'
 Plug 'thinca/vim-visualstar'
@@ -372,6 +373,9 @@ let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
 
 set hidden
 let g:racer_cmd = '$HOME/.cargo/bin/racer'
+let g:rustfmt_autosave = 1
+let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
+let g:rust_doc#downloaded_rust_doc_dir = '$HOME/.rustup/toolchains/stable-x86_64-apple-darwin/'
 autocmd BufNewFile,BufRead *.crs setf rust
 autocmd BufNewFile,BufRead *.rs  let g:quickrun_config.rust = {'exec' : 'cargo run'}
 autocmd BufNewFile,BufRead *.crs let g:quickrun_config.rust = {'exec' : 'cargo script %s -- %a'}
