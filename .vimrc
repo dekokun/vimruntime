@@ -11,6 +11,7 @@ endif
 call plug#begin('~/.vim/plugged')
 " Required:
 
+Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'Shougo/vinarise'
 Plug 'SirVer/ultisnips'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -135,9 +136,6 @@ let g:quickrun_config['markdown'] = {'outputter': 'browser'}
 
 "自動的にインデント
 set autoindent
-
-"pasteのトグルをF11に割り当て
-set pastetoggle=<F11>
 
 "全角スペースを＿と表示
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
@@ -307,6 +305,9 @@ command! Big wincmd _ | wincmd |
 
 " crontabを編集するときはバックアップを行わない。行うとcrontabが編集できなくなる
 autocmd BufRead /tmp/crontab.* :set nobackup nowritebackup
+
+" insertmodeを離脱する時にpasteモードをやめる
+autocmd InsertLeave * set nopaste
 
 " git-fugitive
 nnoremap <Leader>gd :<C-u>Gdiff<Enter>
